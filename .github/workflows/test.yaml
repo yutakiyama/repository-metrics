@@ -4,8 +4,9 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
 
 jobs:
-  sandbox:
+  testing:
     runs-on: ubuntu-latest
+    name: development
     steps:
       - name: Echo
-        run: echo Hello from test env. ${{ secrets.TOKEN }}
+        run: echo Hello from test env. ${{ secrets.HAPPY_BOX }}
