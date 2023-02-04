@@ -5,7 +5,10 @@ name: Test
 run-name: ${{ github.actor }} is learning GitHub Actions
 
 # トリガー
-on: [push]
+on:
+  push:
+    branches:
+      - 'feature/first-actions'
 
 # ワークフローで実行されるグループ
 jobs:
