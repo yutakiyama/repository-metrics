@@ -3,12 +3,9 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 
 on: [push]
 
-env:
-  TEST: ${{ env.TOKEN }}
-
 jobs:
   sandbox:
     runs-on: ubuntu-latest
     steps:
       - name: Echo
-        run: echo $TEST
+        run: echo ${{ env.TOKEN }}
