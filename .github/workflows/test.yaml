@@ -6,7 +6,8 @@ on: [push]
 jobs:
   testing:
     runs-on: ubuntu-latest
-    name: development
+    environment:
+      name: development
     steps:
       - name: Echo
         run: echo Hello from test env. ${{ secrets.HAPPY_BOX }}
