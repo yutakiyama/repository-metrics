@@ -9,8 +9,8 @@ env:
 jobs:
   testing:
     runs-on: ubuntu-latest
-    environment:
-      name: development
+    env:
+      HAPPY_BOX: ${{ secrets.HAPPY_BOX }}
     steps:
       - name: Echo
         run: |
