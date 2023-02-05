@@ -1,5 +1,5 @@
 # GitHub Actions ワークフローのタイトル
-name: Test
+name: Learn github actions
 
 # 実行されたワークフローの名称
 run-name: ${{ github.actor }} is learning GitHub Actions
@@ -8,7 +8,7 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 on:
   push:
     branches:
-      - 'feature/first-actions'
+      - 'develop'
 
 # ワークフローで実行されるグループ
 jobs:
