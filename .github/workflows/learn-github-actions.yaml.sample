@@ -1,0 +1,33 @@
+# GitHub Actions ワークフローのタイトル
+name: Learn github actions
+
+# 実行されたワークフローの名称
+run-name: ${{ github.actor }} is learning GitHub Actions
+
+# トリガー
+on:
+  push:
+    branches:
+      - 'develop'
+
+# ワークフローで実行されるグループ
+jobs:
+  # jobの名称
+  check-bats-version:
+    # ランナーの選択
+    # @see: https://docs.github.com/ja/actions/using-workflows/workflow-syntax-for-github-actions#github-%E3%83%9B%E3%82%B9%E3%83%86%E3%83%83%E3%83%89-%E3%83%A9%E3%83%B3%E3%83%8A%E3%83%BC%E3%81%AE%E9%81%B8%E6%8A%9E
+    runs-on: ubuntu-latest
+    # ステップのグループ化
+    # step配下に指定した命令が、1つの最小単位
+    steps:
+      # リポジトリをランナーにチェックアウトするアクション
+      - uses: actions/checkout@v3
+      # Node.js をインストールします
+      # v14の指定あり
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      # コマンド実行、batsをインストール
+      - run: npm install -g bats
+      # コマンド実行、batsのバージョン確認
+      - run: bats -v
