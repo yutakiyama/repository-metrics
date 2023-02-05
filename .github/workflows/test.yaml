@@ -9,8 +9,6 @@ env:
 jobs:
   testing:
     runs-on: ubuntu-latest
-    env:
-      HAPPY_BOX: ${{ secrets.HAPPY_BOX }}
     steps:
       - name: Echo
         run: |
