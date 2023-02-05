@@ -3,6 +3,9 @@ run-name: ${{ github.actor }} is learning GitHub Actions
 
 on: [push]
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   testing:
     runs-on: ubuntu-latest
