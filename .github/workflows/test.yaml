@@ -10,4 +10,8 @@ jobs:
       name: development
     steps:
       - name: Echo
-        run: echo Hello from test env. ${{ secrets.HAPPY_BOX }}
+        run: |
+            echo Hello from test env. ${{ secrets.HAPPY_BOX }}
+            echo '${{ github.event.pull_request.node_id }}'
+            echo '${{ github.event.pull_request.title }}'
+            echo '${{ github.event.pull_request.merged_at }}'
